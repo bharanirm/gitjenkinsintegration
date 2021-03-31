@@ -1,5 +1,4 @@
-def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
-def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\"
+
 pipeline {
     agent {
         label 'WindowsNode'
@@ -12,44 +11,16 @@ pipeline {
                 
             }
         }
-        stage('Organise Files'){                         
+        stage('Copy Files'){                         
          steps{  
                 script{  
-                  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\")   
-                  /* bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\ /s /i /r")   */              
-                 
-                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
-                    File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
-                    File[] listOfFiles = sourceFolder.listFiles();
-                    echo "Files Total: " + listOfFiles.length;  
-
-                    for (File file : listOfFiles) {
-                        if (file.isFile()) {
-                            echo file.getName()                                                                
-                            Files.copy(Paths.get(file.path), Paths.get("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy"));                                   
-                        }
-                    }     */
-                  /*  fileOperations([fileCopyOperation(
-                    excludes: '',
-                    flattenFiles: false,
-                    includes: "D:\\Bharani\\Projects\\gitjenkins\\app\\**",
-                    targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\**")]) 
-                    */
-                  /*  fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'D:\\Bharani\\Projects\\gitjenkins\\app\\**', targetLocation: 'D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\')]) */
-
-                   /* def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
-                    def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
-                    dstStream << srcStream
-                    srcStream.close()
-                    dstStream.close()    
-                    */      
+                  /*  def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
+                    def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\" */
+                  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir")   
+                
                 }                                
             }                           
         } 
-      /*  stage('Example') {
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        } */
+     
         }
     } 
