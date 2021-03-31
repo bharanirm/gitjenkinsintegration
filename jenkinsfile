@@ -11,11 +11,19 @@ pipeline {
                 
             }
         }
-         stage('Env Test') {
+        stage('Env Testing') {
+            agent { label 'master' }
             steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+               script {
+                   def fields = env.getEnvironment()
+                   fields.each {
+                        key, value -> println("${key} = ${value}");
+                    }
+ 
+                    println(env.PATH)
+               }
             }
-        } 
+        }
         stage('Copy Files'){                         
          steps{  
                 script{  
