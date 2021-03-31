@@ -13,7 +13,7 @@ pipeline {
         stage('Organise Files'){                         
          steps{  
                 script{       
-                   /* bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\")  */               
+                   bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\ /s /i /r")                 
                   /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
@@ -25,12 +25,12 @@ pipeline {
                             Files.copy(Paths.get(file.path), Paths.get("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy"));                                   
                         }
                     }     */
-                    fileOperations([fileCopyOperation(
+                  /*  fileOperations([fileCopyOperation(
                     excludes: '',
                     flattenFiles: false,
                     includes: "D:\\Bharani\\Projects\\gitjenkins\\app\\**",
                     targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\**")]) 
-                    
+                    */
 
                    /* def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
                     def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
@@ -41,5 +41,10 @@ pipeline {
                 }                                
             }                           
         } 
+        stage('Example') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
         }
     } 
