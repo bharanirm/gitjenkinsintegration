@@ -15,7 +15,7 @@ pipeline {
         stage('Organise Files'){                         
          steps{  
                 script{  
-                   bat(ROBOCOPY "D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir")   
+                   ROBOCOPY "D:\\Bharani\\Projects\\gitjenkins\\app\\" "D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\"   
                   /* bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\ /s /i /r")   */              
                  
                   /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
