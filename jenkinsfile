@@ -13,7 +13,7 @@ pipeline {
         stage('Organise Files'){                         
          steps{  
                 script{                        
-                    File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
+                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
                     echo "Files Total: " + listOfFiles.length;  
@@ -23,7 +23,19 @@ pipeline {
                             echo file.getName()                                                                
                             Files.copy(Paths.get(file.path), Paths.get("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy"));                                   
                         }
-                    }                  
+                    }     */
+                   /* fileOperations([fileCopyOperation(
+                    excludes: '',
+                    flattenFiles: false,
+                    includes: "D:\\Bharani\\Projects\\gitjenkins\\app\\**",
+                    targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy")]) 
+                    */
+
+                    def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
+                    def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
+                    dstStream << srcStream
+                    srcStream.close()
+                    dstStream.close()          
                 }                                
             }                           
         } 
