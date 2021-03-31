@@ -11,6 +11,11 @@ pipeline {
                 
             }
         }
+         stage('Env Test') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        } 
         stage('Copy Files'){                         
          steps{  
                 script{  
@@ -46,11 +51,7 @@ pipeline {
                 }                                
             }                           
         } 
-         stage('Env Test') {
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        } 
+        
      
         }
     } 
