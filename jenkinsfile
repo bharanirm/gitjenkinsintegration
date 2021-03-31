@@ -10,5 +10,23 @@ pipeline {
                 
             }
         }
+        stage('Organise Files'){                         
+         steps{  
+                script{                        
+                    File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
+                    File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
+                    File[] listOfFiles = sourceFolder.listFiles();
+                    echo "Files Total: " + listOfFiles.length;  
+
+                    for (File file : listOfFiles) {
+                        if (file.isFile()) {
+                            echo file.getName()                                                                
+                            Files.copy(Paths.get(file.path), Paths.get("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy"));                                   
+                        }
+                    }                  
+                }                                
+            }                           
+        } 
+    }
     }
   }
