@@ -15,7 +15,7 @@ pipeline {
         stage('Organise Files'){                         
          steps{  
                 script{       
-                   bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\ /s /i /r")                 
+                  /* bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\ /s /i /r")   */              
                   /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
