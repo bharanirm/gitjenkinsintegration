@@ -1,3 +1,5 @@
+def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
+def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\"
 pipeline {
     agent {
         label 'WindowsNode'
@@ -31,6 +33,7 @@ pipeline {
                     includes: "D:\\Bharani\\Projects\\gitjenkins\\app\\**",
                     targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\**")]) 
                     */
+                    fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'D:\\Bharani\\Projects\\gitjenkins\\app\\', targetLocation: 'D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\')])
 
                    /* def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
                     def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
