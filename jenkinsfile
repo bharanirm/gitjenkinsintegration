@@ -14,8 +14,8 @@ pipeline {
         stage('Copy Files'){                         
          steps{  
                 script{  
-                  /*  def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
-                    def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\" */
+                    def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
+                    def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\" 
                   bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir")   
                 
                 }                                
