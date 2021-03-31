@@ -25,12 +25,12 @@ pipeline {
                             Files.copy(Paths.get(file.path), Paths.get("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy"));                                   
                         }
                     }     */
-                   /* fileOperations([fileCopyOperation(
+                    fileOperations([fileCopyOperation(
                     excludes: '',
                     flattenFiles: false,
                     includes: "D:\\Bharani\\Projects\\gitjenkins\\app\\**",
                     targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy")]) 
-                    */
+                    
 
                    /* def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
                     def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
