@@ -12,7 +12,8 @@ pipeline {
         }
         stage('Organise Files'){                         
          steps{  
-                script{                        
+                script{       
+                    bat("xcopy D:\\Bharani\\Projects\\gitjenkins\\app D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy /O /X /E /H /K")                 
                   /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
@@ -31,11 +32,12 @@ pipeline {
                     targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy")]) 
                     */
 
-                    def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
+                   /* def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
                     def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
                     dstStream << srcStream
                     srcStream.close()
-                    dstStream.close()          
+                    dstStream.close()    
+                    */      
                 }                                
             }                           
         } 
