@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('Env Testing') {
-            agent { label 'master' }
+            agent { label 'WindowsNode' }
             steps {
                script {
                    def fields = env.getEnvironment()
