@@ -13,13 +13,15 @@ pipeline {
         stage('Load Grrovy Script'){
             script {
             code = load 'myfile.groovy'
+            code.example1()
+            code.example2()
             }
         }
-        stage('Execute Groovy'){
+       /* stage('Execute Groovy'){
             script {
             code.example1()
             }
-        }
+        } */
         stage('Env Testing') {
             /* agent { label 'WindowsNode' } */
             steps {
