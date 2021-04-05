@@ -1,7 +1,7 @@
 pipeline {
     agent {
         label 'WindowsNode'
-    }
+      }
        
     stages {
         stage('Checkout') {
@@ -35,14 +35,7 @@ pipeline {
                }
             }
         }
-        
-
-
-            } 
-                                   
+                        
         } 
-     
-      
-        }
-    } 
- }
+}
+       
