@@ -2,6 +2,8 @@ pipeline {
     agent {
         label 'WindowsNode'
     }
+       def pipe = load 'myfile.groovy'
+        pipe.pipeline()
     stages {
         stage('Checkout') {
             steps {
@@ -33,8 +35,7 @@ pipeline {
             } 
             code.example2()                          
         } 
-        def pipeline = load 'myfile.groovy'
-        pipeline.pipeline()
+     
       
         }
     } 
