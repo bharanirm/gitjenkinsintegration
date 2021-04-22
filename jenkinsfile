@@ -31,7 +31,7 @@ pipeline {
                         key, value -> println("${key} = ${value}");
                     }
                     println(env.PATH)
-                    println env.getEnvironment("PATH")
+                    println env.getEnvironment("JOB_NAME")
                }
             }
         }
