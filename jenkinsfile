@@ -32,7 +32,7 @@ pipeline {
                         key, value -> println("${key} = ${value}");
                     }
                     println(env.PATH)
-                    println(env.BUILD_ID)
+                    println(fields.BUILD_ID)
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}")
                      }
             }
