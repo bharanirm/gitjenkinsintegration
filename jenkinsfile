@@ -30,8 +30,8 @@ pipeline {
                    fields.each {
                         key, value -> println("${key} = ${value}");
                     }
- 
                     println(env.PATH)
+                    println System.getenv("PATH")
                }
             }
         }
