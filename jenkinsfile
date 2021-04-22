@@ -32,14 +32,15 @@ pipeline {
                         key, value -> println("${key} = ${value}");
                     }
                     println(env.PATH)
-                    println(env.PATBUILD_ID)
+                    println(env.BUILD_ID)
+                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}")
                      }
             }
         }
           stage('Env') {
             steps {
                 script{
-                println("Running ${env.BUILD_ID} on ${env.JENKINS_URL}")
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 }
                 
             }
