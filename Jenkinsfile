@@ -1,6 +1,10 @@
-#!groovy
-node {
-    stage("Hello World") {
-        example1()
+pipeline {
+    agent any
+    stages {
+        stage("Hello World") {
+            steps {
+                example2() 
+            }
+        }
     }
 }
