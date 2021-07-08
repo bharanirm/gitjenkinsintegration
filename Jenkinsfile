@@ -1,13 +1,6 @@
 #!groovy
-@Library("jenkins-shared-libraries") _
-pipeline {
-    agent any
-
-    stages {
-        stage('Stage1') {
-            steps {
-               example1()
-            }
-        }
+node {
+    stage("Hello World") {
+        example1 "Bob" 
     }
 }
